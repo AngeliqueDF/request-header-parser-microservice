@@ -27,6 +27,7 @@ app.get("/api/whoami", function (req, res) {
   });
 });
 
+app.use((req, res, next) => res.status(404).send('Sorry, unknown path. <a href="http://localhost:5000/api/whoami">Visit this instead page instead</a>'))
 
 
 // listen for requests :)
