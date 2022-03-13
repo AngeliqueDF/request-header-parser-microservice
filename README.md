@@ -29,8 +29,6 @@ _A header parser which the client's IP address, preferred language, and software
 
 <hr />
 
-<br />
-
 ## Links
 
 <p>
