@@ -23,7 +23,7 @@
 
 ## Overview
 
-*A header parser which the client's IP address, preferred language, and software.*
+_A header parser which the client's IP address, preferred language, and software._
 
 ![Security Headers](https://img.shields.io/security-headers?url=https%3A%2F%2Fadf.dev)
 
@@ -41,12 +41,12 @@
 
 ## How to run the project
 
-1. ``git clone HTTPS_REPO_URL MY-FOLDER-NAME``
-2. ``cd MY-FOLDER-NAME``
-3. add ``.env`` file with a ``PORT`` value
-4. ``npm install``
-5. `` npm start ``
-6. visit ``http://localhost:{PORT}``
+1. `git clone HTTPS_REPO_URL MY-FOLDER-NAME`
+2. `cd MY-FOLDER-NAME`
+3. add `.env` file with a `PORT` value
+4. `npm install`
+5. `npm start`
+6. visit `http://localhost:{PORT}`
 
 <br />
 
@@ -54,11 +54,11 @@
 
 This project is a simple Express.js app which parses specific headers from a request and returns them in a JSON object.
 
-This is my solution to freeCodeCamp's Request Header Parser Microservice challenge. 
+The code is my solution to freeCodeCamp's Request Header Parser Microservice challenge.
 
 ## Features
 
-- Returns client's ip address, preferred language, and software. 
+- Returns client's ip address, preferred language, and software.
 - Handles requesting an unknown URL.
 
 <br />
@@ -67,36 +67,36 @@ This is my solution to freeCodeCamp's Request Header Parser Microservice challen
 
 ### Get the JSON response
 
-``GET localhost:{PORT}/whoami/``
+`GET localhost:{PORT}/whoami/`
 
 #### Parameters
 
 None. All values are taken from the request's headers.
 
-#### Example response 
+#### Example response
 
-```
+```javascript
 {
-  ipaddress:"159.20.14.100",
-  language:"en-US,en;q=0.5",
-  software:"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:50.0) Gecko/20100101 Firefox/50.0"
-} 
+  ipaddress: "159.20.14.100",
+  language: "en-US,en;q=0.5",
+  software: "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:50.0) Gecko/20100101 Firefox/50.0"
+}
 ```
 
 <br />
 
 ## Technologies
 
-- ``Node.js`` and ``Express.js``
-<!-- 
+- `Node.js` and `Express.js`
+<!--
+
 ## How I built this project
 
 gist -->
 
-
 ### Recommended technologies and tools
 
-- [``nodemon`` to restart the server after each save.](https://www.npmjs.com/package/nodemon) 
+- [`nodemon` to restart the server after each save.](https://www.npmjs.com/package/nodemon)
 
 <br />
 
@@ -106,7 +106,5 @@ gist -->
 
 ## Useful references
 
-1. [req.ip](http://expressjs.com/en/4x/api.html#req.ip).
-2. [req.get(field)](http://expressjs.com/en/4x/api.html#req.get).
-
-<!-- ## Inspiration -->
+1. [`req.ip` from the Express documentation](http://expressjs.com/en/4x/api.html#req.ip).
+2. [`req.get(field)` from the Express documentation](http://expressjs.com/en/4x/api.html#req.get).
