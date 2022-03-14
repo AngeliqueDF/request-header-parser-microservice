@@ -1,18 +1,3 @@
-- [Request Header Parser Microservice](#request-header-parser-microservice)
-  - [Overview](#overview)
-  - [Links](#links)
-  - [How to run the project](#how-to-run-the-project)
-  - [Description](#description)
-  - [Features](#features)
-  - [API](#api)
-    - [Get the JSON response](#get-the-json-response)
-      - [Parameters](#parameters)
-      - [Example response](#example-response)
-  - [Technologies](#technologies)
-    - [Recommended technologies and tools](#recommended-technologies-and-tools)
-  - [Sources](#sources)
-  - [Useful references](#useful-references)
-
 # Request Header Parser Microservice
 
 <div align="center">
@@ -27,8 +12,6 @@ _A header parser which the client's IP address, preferred language, and software
 
 <!-- ![Security Headers](https://img.shields.io/security-headers?url=https%3A%2F%2Fadf.dev) -->
 
-<hr />
-
 ## Links
 
 <p>
@@ -39,7 +22,7 @@ _A header parser which the client's IP address, preferred language, and software
 
 ## How to run the project
 
-1. `git clone HTTPS_REPO_URL MY-FOLDER-NAME`
+1. `git clone https://github.com/AngeliqueDF/request-header-parser-microservice-challenge.git MY-FOLDER-NAME`
 2. `cd MY-FOLDER-NAME`
 3. add `.env` file with a `PORT` value
 4. `npm install`
@@ -50,7 +33,7 @@ _A header parser which the client's IP address, preferred language, and software
 
 ## Description
 
-This project is a simple Express.js app which parses specific headers from a request and returns them in a JSON object.
+This project is an Express.js app which parses specific headers from a request and returns them in a JSON object.
 
 The code is my solution to freeCodeCamp's Request Header Parser Microservice challenge.
 
@@ -73,11 +56,11 @@ None. All values are taken from the request's headers.
 
 #### Example response
 
-```javascript
+```json
 {
-  ipaddress: "159.20.14.100",
-  language: "en-US,en;q=0.5",
-  software: "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:50.0) Gecko/20100101 Firefox/50.0"
+	"ipaddress": "159.20.14.100",
+	"language": "en-US,en;q=0.5",
+	"software": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:50.0) Gecko/20100101 Firefox/50.0"
 }
 ```
 
@@ -85,7 +68,9 @@ None. All values are taken from the request's headers.
 
 ## Technologies
 
-- `Node.js` and `Express.js`
+- `Node.js`
+- `Express.js`
+- `helmet`
 <!--
 
 ## How I built this project
