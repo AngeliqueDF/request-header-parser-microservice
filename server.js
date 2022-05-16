@@ -24,7 +24,6 @@ app.get("/src/js/main.js", function (req, res) {
 	res.sendFile(__dirname + "/src/js/main.js");
 });
 
-app.use((req, res, next) => res.status(404).send('Sorry, unknown path. <a href="http://localhost:5000/api/whoami">Visit this instead page instead</a>'))
 app.get("/api/whoami", function (req, res) {
 	res.json({
 		ipaddress: req.ip,
@@ -33,6 +32,13 @@ app.get("/api/whoami", function (req, res) {
 	});
 });
 
+app.use((req, res, next) =>
+	res
+		.status(404)
+		.send(
+			'Sorry, unknown path. <a href="http://localhost:5000/api/whoami">Visit this instead page instead</a>'
+		)
+);
 
 // listen for requests :)
 var listener = app.listen(process.env.PORT, function () {
