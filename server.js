@@ -19,18 +19,19 @@ app.get("/", function (req, res) {
 	res.sendFile(__dirname + "/views/index.html");
 });
 
-app.get("/api/whoami", function (req, res) {
-  res.json({
-    ipaddress: req.ip,
-    language: req.get('Accept-Language'),
-    software: req.get('User-Agent')
-  });
 // Serve the frontend script needed in the "/" path
 app.get("/src/js/main.js", function (req, res) {
 	res.sendFile(__dirname + "/src/js/main.js");
 });
 
 app.use((req, res, next) => res.status(404).send('Sorry, unknown path. <a href="http://localhost:5000/api/whoami">Visit this instead page instead</a>'))
+app.get("/api/whoami", function (req, res) {
+	res.json({
+		ipaddress: req.ip,
+		language: req.get("Accept-Language"),
+		software: req.get("User-Agent"),
+	});
+});
 
 
 // listen for requests :)
