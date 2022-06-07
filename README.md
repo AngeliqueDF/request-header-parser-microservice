@@ -22,10 +22,10 @@ _A microservice which returns the client's IP address, preferred language, and s
 
 1. `git clone https://github.com/AngeliqueDF/request-header-parser-microservice-challenge.git MY-FOLDER-NAME`
 2. `cd MY-FOLDER-NAME`
-3. add `.env` file with a `PORT` value
+3. Add `.env` file with a `PORT` value
 4. `npm install`
 5. `npm start`
-6. visit `http://localhost:{PORT}`
+6. Visit `http://localhost:{PORT}`
 
 <br />
 
@@ -43,7 +43,9 @@ _A microservice which returns the client's IP address, preferred language, and s
 
 ## Description
 
-This project is an Express.js app which parses specific headers from a request and returns them in a JSON object. This is my solution to freeCodeCamp's Request Header Parser Microservice challenge.
+This project is an Express.js app which parses specific headers from a request and returns them in a JSON object. It could be used in an analytics software, a data analytics API, or a logging system, for example.
+
+It's my solution to freeCodeCamp's Request Header Parser Microservice challenge.
 
 ### How to test the app (manually)
 
@@ -67,7 +69,11 @@ Visit the http://localhost:5000/api/whoami endpoint in your browser (use the JSO
 
 ### How I built this project
 
-I completed this app using Express' documentation. I replaced the original frontend by serving the HTML and JavaScript files required. The CSS is served using a CDN.
+I completed this app using Express' documentation. I replaced the original frontend by serving the HTML and JavaScript files required.
+
+The CSS is a minified Bootstrap stylesheet served from a CDN.
+
+Then I added security measures with `helmet` although this aspect still needs to be improved.
 
 ## API
 
@@ -75,7 +81,7 @@ I completed this app using Express' documentation. I replaced the original front
 
 Returns information on the request.
 
-`GET localhost:{PORT}/whoami/`
+`GET localhost:{PORT}/api/whoami/`
 
 #### Parameters
 
@@ -110,8 +116,6 @@ Data coming from clients is processed without any check. Trusting input from the
 ### Planned changes
 
 - [ ] Improve security.
-
-[See the advancement of the project here. PRs welcome!]()
 
 ## Sources
 
