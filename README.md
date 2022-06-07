@@ -8,7 +8,7 @@
 
 ## Overview
 
-_A header parser which returns the client's IP address, preferred language, and software._
+_A microservice which returns the client's IP address, preferred language, and software._
 
 ## Links
 
@@ -29,22 +29,51 @@ _A header parser which returns the client's IP address, preferred language, and 
 
 <br />
 
-## Description
-
-This project is an Express.js app which parses specific headers from a request and returns them in a JSON object.
-
-This is my solution to freeCodeCamp's Request Header Parser Microservice challenge.
-
 ## Features
 
-- Returns client's ip address, preferred language, and software.
+- Parses the request's headers to return information about it.
 - Handles requesting an unknown URL.
 
-<br />
+## Technologies
+
+- `node`
+- `express`
+- `helmet`
+- Bootstrap
+
+## Description
+
+This project is an Express.js app which parses specific headers from a request and returns them in a JSON object. This is my solution to freeCodeCamp's Request Header Parser Microservice challenge.
+
+### How to test the app (manually)
+
+Once the server is listening, there are different ways to test this microservice:
+
+#### Using the `curl` utility
+
+1. Open the terminal
+2. Enter `curl http://localhost:5000/api/whoami`
+
+#### Using the REST Client VS Code extension
+
+1. Create a new file from the terminal `touch request.rest && code request.rest`.
+2. In `request.rest`, enter `GET http://localhost:5000/api/whoami`.
+3. Click on the `Send request` link that appears above the request you entered in step 2.
+4. Once a response is received from the server, its body and headers will be displayed in a new editor tab.
+
+#### In the browser
+
+Visit the http://localhost:5000/api/whoami endpoint in your browser (use the JSONVue extension to format the response, or use Firefox).
+
+### How I built this project
+
+I completed this app using Express' documentation. I replaced the original frontend by serving the HTML and JavaScript files required. The CSS is served using a CDN.
 
 ## API
 
-### Get the JSON response
+### Get the parsed headers
+
+Returns information on the request.
 
 `GET localhost:{PORT}/whoami/`
 
@@ -64,40 +93,6 @@ None. All values are taken from the request's headers.
 
 <br />
 
-## Technologies
-
-- `Node.js`
-- `Express.js`
-- `helmet`
-<!--
-
-## How I built this project
-
-gist -->
-
-<br />
-
-## How to test the app
-
-If you are testing this app on localhost, do not forget to start the server! See the repo.
-There are different ways to test this microservice:
-
-### Using the Curl utility
-
-1. Open the terminal
-2. Enter `curl http://localhost:5000/api/whoami`
-
-### Using the REST Client VS Code extension
-
-1. Create a new file from the terminal `touch request.rest && code request.rest`.
-2. In `request.rest`, enter `GET http://localhost:5000/api/whoami`.
-3. Click on the `Send request` link that appears above the request you entered in step 2.
-4. Once a response is received from the server, its body and headers will be displayed in a new editor tab.
-
-### In the browser
-
-Visit the http://localhost:5000/api/whoami endpoint in your browser (use the JSONVue extension to format the response).
-
 ### Recommended technologies and tools
 
 - [`nodemon` to restart the server after each save.](https://www.npmjs.com/package/nodemon).
@@ -106,11 +101,29 @@ Visit the http://localhost:5000/api/whoami endpoint in your browser (use the JSO
 
 <br />
 
+## Status
+
+**The app is functional but needs security improvements**.
+
+Data coming from clients is processed without any check. Trusting input from the client can leave the app vulnerable to malicious requests.
+
+### Planned changes
+
+- [ ] Improve security.
+
+[See the advancement of the project here. PRs welcome!]()
+
 ## Sources
 
-- [Request Header Parser Microservice challenge from freeCodeCamp.](https://www.freecodecamp.org/learn/back-end-development-and-apis/back-end-development-and-apis-projects/request-header-parser-microservice)
+- [Request Header Parser Microservice - freeCodeCamp](https://www.freecodecamp.org/learn/back-end-development-and-apis/back-end-development-and-apis-projects/request-header-parser-microservice)
 
 ## Useful references
 
 1. [`req.ip` from the Express documentation](http://expressjs.com/en/4x/api.html#req.ip).
 2. [`req.get(field)` from the Express documentation](http://expressjs.com/en/4x/api.html#req.get).
+
+## Author
+
+- [@AngeliqueDF on GitHub.](https://github.com/AngeliqueDF)
+- [Visit my website.](https://adf.dev)
+- [View my Frontend Mentor profile.](https://www.frontendmentor.io/profile/AngeliqueDF)
