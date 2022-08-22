@@ -2,13 +2,17 @@
  * Sends a request to find information about the browser
  */
 const getBrowserInfo = async () => {
-	const response = await fetch(
-		location.protocol + "//" + location.host + "/api/whoami"
-	);
+	try {
+		const response = await fetch(
+			location.protocol + "//" + location.host + "/api/whoami"
+		);
 
-	const json = await response.json();
+		const json = await response.json();
 
-	return json;
+		return json;
+	} catch (error) {
+		console.log(error);
+	}
 };
 
 /**
